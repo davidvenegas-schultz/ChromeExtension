@@ -1,7 +1,10 @@
+import { useFetchITContext } from '../context.js'
 import { FaArrowLeft } from 'react-icons/fa'
 import { BsPower } from 'react-icons/bs'
 
-function FullPim({localOpen, setLocalOpen}) {
+function FullPim() {
+  const { localOpen, setLocalOpen } = useFetchITContext()
+
   return (
     <div className='full-pim-wrapper'>
       <div className="full-pim-top">

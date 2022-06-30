@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
+import { useFetchITContext } from '../context.js'
 import Pim from './Pim.js'
 import fetchitLogo from '../images/fetchitLogo.png'
 
-function Main({search, handleSearch, open, setOpen}) {
+function Main() {
+  const { search } = useFetchITContext()
   const [filteredSearch, setFilteredSearch] = useState(search)
   const [filteredSearchTerm, setFilteredSearchTerm] = useState('')
+
   const handleChange = (e) => setFilteredSearchTerm(e)
 
   useEffect(() => setFilteredSearch(search.filter(i => i.name.toLowerCase().includes(filteredSearchTerm.toLowerCase()))), [filteredSearchTerm, search])
@@ -23,7 +26,7 @@ function Main({search, handleSearch, open, setOpen}) {
           {filteredSearch.length === 0 ?
           <p className="no-results">No results for those search terms</p>
           : filteredSearch.map(i => (
-            <Pim key={i.id} id={i.id} name={i.name} open={open} setOpen={setOpen} handleSearch={handleSearch} />
+            <Pim key={i.id} />
           ))}
         </div>
         <div className="main-footer">

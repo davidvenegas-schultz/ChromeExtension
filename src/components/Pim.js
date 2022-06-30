@@ -1,18 +1,9 @@
-import { useState } from 'react'
+import { useFetchITContext } from '../context.js'
 import FullPim from './FullPim'
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
 
-function Pim({id, name, open, setOpen}) {
-  const [dropdown, setDropdown] = useState(false)
-  const [localOpen, setLocalOpen] = useState(false)
-  const handleClick = () => {
-    setDropdown(!dropdown)
-    setLocalOpen(false)
-  }
-  const handleSelect = () => {
-    setOpen(!open)
-    setLocalOpen(!localOpen)
-  }
+function Pim() {
+  const { id, name, dropdown, handleClick, handleSelect, localOpen} = useFetchITContext()
 
   return (
     <div className='pim-wrapper' key={id}>
@@ -27,7 +18,7 @@ function Pim({id, name, open, setOpen}) {
           <button onClick={handleClick}>Cancel</button>
         </div>
       : null}
-      {localOpen ? <FullPim localOpen={localOpen} setLocalOpen={setLocalOpen} /> : null}
+      {localOpen ? <FullPim/> : null}
     </div>
   )
 }
