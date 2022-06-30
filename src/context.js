@@ -4,7 +4,16 @@ export const useFetchITContext = () => useContext(allFetchITContext)
 export const allFetchITContext = createContext({})
 
 export const FetchITContextProvider = ({ children }) => {
-    const [search, setSearch] = useState([{id: 1, name: "ezVet"}, {id: 2, name: "ezVet2"}, {id: 3, name: "ezVet3"}])
+    const data = [
+      {id: 1, name: "AVIMark"},
+      {id: 2, name: "Cornerstone"},
+      {id: 3, name: "CovetrusConnect"},
+      {id: 4, name: "eVetPractice"},
+      {id: 5, name: "ezyVet"},
+      {id: 6, name: "Impromed"},
+      {id: 7, name: "Vetspire"}
+    ]
+    const [search, setSearch] = useState(data)
     const [open, setOpen] = useState(false)
     const [currentPIM, setCurrentPIM] = useState(null)
 
