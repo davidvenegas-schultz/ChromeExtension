@@ -1,3 +1,4 @@
+import './FullPim.css'
 import { useFetchITContext } from '../context.js'
 import { FaArrowLeft } from 'react-icons/fa'
 import { BsPower } from 'react-icons/bs'

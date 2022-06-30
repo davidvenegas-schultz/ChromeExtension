@@ -1,3 +1,4 @@
+import './Pim.css'
 import { useState } from 'react'
 import { useFetchITContext } from '../context.js'
 import FullPim from './FullPim'
@@ -21,11 +22,13 @@ function Pim({ id, name }) {
 
   return (
     <div className='pim-wrapper' key={id}>
-      <h2 className="pim-name">{name}</h2>
-      {dropdown ?
-        <BsChevronUp className="pim-caret" onClick={handleClick}/>
-        : <BsChevronDown className="pim-caret" onClick={handleClick}/>
-      }
+      <div className="pim-top-section">
+        <h2 className="pim-name">{name}</h2>
+        {dropdown ?
+          <BsChevronUp className="pim-caret" onClick={handleClick}/>
+          : <BsChevronDown className="pim-caret" onClick={handleClick}/>
+        }
+      </div>
       {dropdown ?
         <div className="pim-dropdown-wrapper">
           <button onClick={handleSelect}>Select</button>
