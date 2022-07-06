@@ -21,9 +21,9 @@ function Pim({ id, name }) {
   }
 
   return (
-    <div className='pim-wrapper' key={id} style={dropdown ? {border: '2px solid #858585'} : null}>
+    <div className='pim-wrapper' key={id} style={dropdown ? {border: '1px solid #999'} : null}>
       <div className="pim-top-section" onClick={handleClick}>
-        <h2 className="pim-name" style={dropdown ? {fontSize: "2rem", fontWeight: "900", color: "#282828"} : null}>{name}</h2>
+        <h2 className="pim-name" style={dropdown ? {fontSize: "2rem", fontWeight: "700", color: "#333"} : null}>{name}</h2>
         {dropdown ?
           <BsChevronUp className="pim-caret" />
           : <BsChevronDown className="pim-caret" />

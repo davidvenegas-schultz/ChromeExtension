@@ -7,13 +7,11 @@
 }
 .main-wrapper {
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.35) 0px 0px 0px 1px;
-  border-radius: .5rem;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 520px;
+  min-height: 540px;
   width: 300px;
 }
 .main-header {
@@ -40,7 +38,7 @@
   width: 82.5%;
   min-height: 11.5rem;
   padding-bottom: 1rem;
-  background-color: whitesmoke;
+  background-color: white;
 }
 .income-search-form {
   margin: 1rem;
@@ -66,8 +64,9 @@
 .no-results {
   text-align: center;
   margin: 3rem auto;
-  font-size: 1.175rem;
+  font-size: 1.25rem;
   font-style: italic;
+  color: #333;
 }
 .main-footer {
   margin: 1.25rem 1rem;
