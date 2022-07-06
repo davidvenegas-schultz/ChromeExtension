@@ -21,18 +21,18 @@ function Pim({ id, name }) {
   }
 
   return (
-    <div className='pim-wrapper' key={id}>
-      <div className="pim-top-section">
-        <h2 className="pim-name">{name}</h2>
+    <div className='pim-wrapper' key={id} style={dropdown ? {border: '2px solid #858585'} : null}>
+      <div className="pim-top-section" onClick={handleClick}>
+        <h2 className="pim-name" style={dropdown ? {fontSize: "2rem", fontWeight: "900", color: "#282828"} : null}>{name}</h2>
         {dropdown ?
-          <BsChevronUp className="pim-caret" onClick={handleClick}/>
-          : <BsChevronDown className="pim-caret" onClick={handleClick}/>
+          <BsChevronUp className="pim-caret" />
+          : <BsChevronDown className="pim-caret" />
         }
       </div>
       {dropdown ?
         <div className="pim-dropdown-wrapper">
-          <button onClick={handleSelect}>Select</button>
-          <button onClick={handleClick}>Cancel</button>
+          <button id='pim-select-btn' onClick={handleSelect}>Select</button>
+          <button id='pim-cancel-btn' onClick={handleClick}>Cancel</button>
         </div>
       : null}
       {localOpen ? <FullPim/> : null}

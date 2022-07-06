@@ -26,7 +26,7 @@ function Main() {
           <FullPim/>
           : <Fragment>
           <form className='income-search-form'>
-            <input onChange={(e) => handleChange(e.target.value)} type="text" placeholder='Search PIMs...' className='main-searchbar' />
+            <input onChange={(e) => handleChange(e.target.value)} type="text" placeholder='Search PIMs...' className='main-searchbar' value={filteredSearchTerm}/>
           </form>
           {filteredSearch.length === 0 ?
           <p className="no-results">No results for that search term.</p>

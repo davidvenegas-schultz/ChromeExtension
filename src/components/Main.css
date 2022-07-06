@@ -2,16 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 640px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
 }
 .main-wrapper {
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.35) 0px 0px 0px 1px;
   border-radius: .5rem;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  min-height: 520px;
+  width: 300px;
 }
 .main-header {
   display: flex;
@@ -37,6 +40,7 @@
   width: 82.5%;
   min-height: 11.5rem;
   padding-bottom: 1rem;
+  background-color: whitesmoke;
 }
 .income-search-form {
   margin: 1rem;
@@ -44,19 +48,19 @@
 .main-searchbar {
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   width: 100%;
-  height: 3rem;
+  height: 3.25rem;
   outline: none;
   border: none;
   border-radius: .35rem;
   padding-left: .65rem;
   padding-top: .125rem;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   background-color: #fff;
   border: 1px solid #bbb;
 }
 .main-searchbar:focus {
   border-width: 2px;
-  border-color: #3586ff;
+  border-color: #3586ffb5;
   box-shadow: 0 0 7.5px #3586ff;
 }
 .no-results {

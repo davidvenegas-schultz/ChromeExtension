@@ -21,6 +21,7 @@ export const FetchITContextProvider = ({ children }) => {
 
 
     const allFetchITValues = {
+      data,
       search,
       setSearch,
       open,
