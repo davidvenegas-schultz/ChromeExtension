@@ -16,6 +16,7 @@ export const FetchITContextProvider = ({ children }) => {
     const [search, setSearch] = useState(data)
     const [open, setOpen] = useState(false)
     const [currentPIM, setCurrentPIM] = useState(null)
+    const [topOpen, setTopOpen] = useState(true)
 
     const handleSearch = (e) => setSearch(e.target.value)
 
@@ -27,7 +28,9 @@ export const FetchITContextProvider = ({ children }) => {
       setOpen,
       currentPIM,
       setCurrentPIM,
-      handleSearch
+      handleSearch,
+      topOpen,
+      setTopOpen
     }
 
     return (

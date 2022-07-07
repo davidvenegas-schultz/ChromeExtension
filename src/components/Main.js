@@ -1,12 +1,14 @@
 import './Main.css'
 import { Fragment, useEffect, useState } from 'react'
 import { useFetchITContext } from '../context.js'
+import Top from './Top'
 import Pim from './Pim.js'
-import fetchitLogo from '../images/fetchitLogo.png'
 import FullPim from './FullPim.js'
+import { FaArrowLeft } from 'react-icons/fa'
+import fetchitLogo from '../images/fetchitLogo.png'
 
 function Main() {
-  const { search, open } = useFetchITContext()
+  const { search, open, topOpen, setTopOpen } = useFetchITContext()
   const [filteredSearch, setFilteredSearch] = useState(search)
   const [filteredSearchTerm, setFilteredSearchTerm] = useState('')
 
@@ -17,17 +19,21 @@ function Main() {
   return (
     <div className="main-container">
       <div className="main-wrapper">
-        <div className="main-header">
+        <a href='https://www.fetchitdata.com/' target="_blank" rel="noreferrer" className="main-header">
           <img src={fetchitLogo} alt="FetchIT" className="main-logo" />
           <h2 className="main-title">FetchIT</h2>
-        </div>
-        <div className="main-content">
+        </a>
+        {topOpen ? <Top/>
+        : <div className="main-content">
           {open ?
           <FullPim/>
           : <Fragment>
-          <form className='income-search-form'>
-            <input onChange={(e) => handleChange(e.target.value)} type="text" placeholder='Search PIMs...' className='main-searchbar' value={filteredSearchTerm}/>
-          </form>
+          <div className="main-top-wrapper">
+            <FaArrowLeft id='main-back' onClick={() => setTopOpen(true)}/>
+            <form className='income-search-form'>
+              <input onChange={(e) => handleChange(e.target.value)} type="text" placeholder='Search PIMs...' className='main-searchbar' value={filteredSearchTerm}/>
+            </form>
+          </div>
           {filteredSearch.length === 0 ?
           <p className="no-results">No results for that search term.</p>
           : filteredSearch.map(pim => (
@@ -35,7 +41,7 @@ function Main() {
           ))}
           </Fragment>
           }
-        </div>
+        </div>}
         <div className="main-footer">
           <p>For help or development questions contact <b>Schultz Technology</b> at <a href='mailto:someone@schultztechnolgy.com'>someone@schultztechnolgy.com</a></p>
         </div>
