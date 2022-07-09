@@ -20,6 +20,17 @@
     "http://*/"
   ],
   "background": {
-    "scripts": ["EzVet.js"]
-  }
+    "scripts": [
+      "polyfill.js",
+      "react.development.js",
+      "react-dom.development.js",
+      "demo.js"
+    ]
+  },
+  "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["./static/js/content.js"]
+    }
+  ]
 }

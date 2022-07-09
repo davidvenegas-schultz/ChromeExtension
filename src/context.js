@@ -20,7 +20,6 @@ export const FetchITContextProvider = ({ children }) => {
 
     const handleSearch = (e) => setSearch(e.target.value)
 
-
     const allFetchITValues = {
       search,
       setSearch,
