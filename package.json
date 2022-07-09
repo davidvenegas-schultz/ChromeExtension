@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,6 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.193"
+    "@types/chrome": "^0.0.193",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   }
 }

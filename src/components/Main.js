@@ -5,7 +5,7 @@ import Top from './Top'
 import Pim from './Pim.js'
 import FullPim from './FullPim.js'
 import { FaArrowLeft } from 'react-icons/fa'
-import fetchitLogo from '../images/fetchitLogo.png'
+import fetchitLogo from '../logo.png'
 
 function Main() {
   const { search, open, topOpen, setTopOpen } = useFetchITContext()

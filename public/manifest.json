@@ -3,34 +3,21 @@
   "name": "FetchIT",
   "description": "The FetchIT Chrome Extension",
   "version": "0.1",
-  "action": {
-    "default_popup": "index.html",
-    "default_title": "Open the popup"
-  },
   "permissions": [
-    "scripting",
+    "unlimitedStorage",
     "notifications",
-    "webNavigation",
-    "activeTab",
     "tabs",
-    "<all_urls>"
+    "nativeMessaging"
   ],
   "host_permissions": [
     "https://*/",
     "http://*/"
   ],
-  "background": {
-    "scripts": [
-      "polyfill.js",
-      "react.development.js",
-      "react-dom.development.js",
-      "demo.js"
-    ]
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
   },
-  "content_scripts": [
-    {
-        "matches": ["http://*/*", "https://*/*"],
-        "js": ["./static/js/content.js"]
-    }
-  ]
+  "background":{    
+    "service_worker": "./service_worker/background.js"
+  }
 }
