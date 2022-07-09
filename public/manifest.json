@@ -9,10 +9,17 @@
   },
   "permissions": [
     "scripting",
-    "notifications"
+    "notifications",
+    "webNavigation",
+    "activeTab",
+    "tabs",
+    "<all_urls>"
   ],
   "host_permissions": [
     "https://*/",
     "http://*/"
-  ]
+  ],
+  "background": {
+    "scripts": ["EzVet.js"]
+  }
 }

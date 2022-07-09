@@ -9,12 +9,26 @@ function FullPim() {
   const { setOpen, currentPIM, setCurrentPIM } = useFetchITContext()
   const [localOpen, setLocalOpen] = useState(false)
 
+  console.log(currentPIM)
+
   function handleClose() {
     setCurrentPIM(null)
     setOpen(false)
   }
 
-  console.log(currentPIM)
+  function openTab(url) {
+    var win = window.open(url, '_blank')
+    win.focus()
+  }
+
+  function handlePowerOn() {
+    setLocalOpen(!localOpen)
+    openTab('https://youtube.com/')
+  }
+
+  function handlePowerOff() {
+    setLocalOpen(!localOpen)
+  }
 
   return (
     <div className={"full-pim-wrapper"}>
@@ -26,8 +40,8 @@ function FullPim() {
         <h3 className="full-pim-connected">{localOpen ? "Connected" : "Disconnected"}</h3>
         <div className="power-button-wrapper">
           {localOpen ?
-          <BsPower id="full-pim-power" onClick={() => setLocalOpen(!localOpen)}/>
-          : <BiPowerOff id="full-pim-power" onClick={() => setLocalOpen(!localOpen)}/>
+          <BsPower id="full-pim-power" onClick={() => handlePowerOff()}/>
+          : <BiPowerOff id="full-pim-power" onClick={() => handlePowerOn()}/>
           }
         </div>
       </div>
