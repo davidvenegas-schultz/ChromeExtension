@@ -8,4 +8,4 @@ port.onMessage.addListener(function(msg) {
 port.onDisconnect.addListener(function() {
   console.log("Disconnected")
 })
-port.postMessage({ text: "Hello, my name is ej" })
+port.postMessage({ text: "Hello, my name is not ej" })
