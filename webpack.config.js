@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   // mode:"production",
@@ -6,5 +6,5 @@ module.exports = {
   output: {
     filename: 'build/service_worker/background.js',
     path: path.resolve(__dirname, '.'),
-  },
+  }
 }

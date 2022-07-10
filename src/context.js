@@ -20,6 +20,11 @@ export const FetchITContextProvider = ({ children }) => {
 
     const handleSearch = (e) => setSearch(e.target.value)
 
+    window.addEventListener('storage', () => {
+      // When local storage changes, dump the list to the console.
+      console.log(JSON.parse(window.localStorage.getItem('messageFromHost')))
+    })
+
     const allFetchITValues = {
       search,
       setSearch,
