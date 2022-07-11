@@ -1,5 +1,7 @@
+/*global chrome*/
+
 import './FullPim.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useFetchITContext } from '../context.js'
 import { FaArrowLeft } from 'react-icons/fa'
 import { BsPower } from 'react-icons/bs'
@@ -8,8 +10,17 @@ import { BiPowerOff } from 'react-icons/bi'
 function FullPim() {
   const { setOpen, currentPIM, setCurrentPIM } = useFetchITContext()
   const [localOpen, setLocalOpen] = useState(false)
+  const [currentMessage, setCurrentMessage] = useState({})
 
-  console.log(currentPIM)
+  // console.log(currentPIM)
+
+  useEffect(() => {
+    var port = chrome?.runtime?.connectNative('com.schultztechnology.fetchit')
+    port?.onMessage?.addListener((msg) => {
+      console.log("Received" + msg)
+      setCurrentMessage(msg)
+    })
+  }, [])
 
   function handleClose() {
     setCurrentPIM(null)
@@ -23,7 +34,8 @@ function FullPim() {
 
   function handlePowerOn() {
     setLocalOpen(!localOpen)
-    openTab('https://youtube.com/')
+    console.log("Current Message: " + JSON.stringify(currentMessage))
+    // openTab('https://youtube.com/')
   }
 
   function handlePowerOff() {
