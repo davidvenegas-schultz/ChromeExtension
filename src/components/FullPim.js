@@ -1,5 +1,4 @@
 /*global chrome*/
-
 import './FullPim.css'
 import { useEffect, useState } from 'react'
 import { useFetchITContext } from '../context.js'

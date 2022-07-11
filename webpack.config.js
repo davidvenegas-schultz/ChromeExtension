@@ -3,10 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   // mode:"production",
-  entry: path.join(__dirname, "src", "index.js"),
+  entry: [
+    path.join(__dirname, "src", "index.js"),
+    './src/service_worker/background.js',
+  ],
   output: {
-    filename: 'build/service_worker/background.js',
-    path: path.resolve(__dirname, "dist"),
+    filename: '/build/service_worker/background.js',
+    path: path.resolve(__dirname, '.'),
   },
   module: {
     rules: [
